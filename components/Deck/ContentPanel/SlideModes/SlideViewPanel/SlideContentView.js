@@ -5,6 +5,7 @@ import ChartRender from '../../util/ChartRender';
 import {connectToStores} from 'fluxible-addons-react';
 import SlideViewStore from '../../../../../stores/SlideViewStore';
 const ReactDOM = require('react-dom');
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
 class SlideContentView extends React.Component {
     constructor(props) {
@@ -156,6 +157,14 @@ class SlideContentView extends React.Component {
                       {this.props.speakernotes ? <b>Speaker notes:</b> : ''}
                       <div style={SpeakerStyle} name='inlineSpeakerNotes' ref='inlineSpeakerNotes' id='inlineSpeakerNotes'  dangerouslySetInnerHTML={{__html: this.props.speakernotes}} tabIndex="0">
                       </div>
+                      <div className="mycustomclass">
+                        <TwitterTimelineEmbed
+                        sourceType="profile"
+                        screenName="saurabhnemade"
+                        options={{height: 400}}
+                        />
+                      </div>
+
                   </div>
                 }
             </div>
